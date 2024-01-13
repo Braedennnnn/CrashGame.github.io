@@ -27,19 +27,19 @@
         connection.on('data', (data) => {
             console.log('Received data from host:', data);
         });
-        document.getElementById("left").addEventListener("mouseover", (event) => {
+        document.getElementById("left").addEventListener("pointerdown", (event) => {
         document.getElementById("left").style.background = "white";
         connection.send("left")
     });
-    document.getElementById("right").addEventListener("mouseover", (event) => {
+    document.getElementById("right").addEventListener("pointerdown", (event) => {
         document.getElementById("right").style.background = "white";
         connection.send("right")
     });
-    document.getElementById("left").addEventListener("mouseleave", (event) => {
+    document.getElementById("left").addEventListener("pointerup", (event) => {
         document.getElementById("left").style.background = "orange";
         connection.send("stopleft")
     });
-    document.getElementById("right").addEventListener("mouseleave", (event) => {
+    document.getElementById("right").addEventListener("pointerup", (event) => {
         document.getElementById("right").style.background = "orange";
         connection.send("stopright")
     });
