@@ -16,7 +16,7 @@
     peer.on('open', (id) => {
         console.log('Client peer ID is: ' + id);
 
-const urlParams = "cf94b563-3840-48d7-a21a-88d09cdf2674"
+const urlParams = window.location.search.split("?")[1]
 
         const hostPeerId = urlParams
         console.log(urlParams)// Replace with the actual host ID
