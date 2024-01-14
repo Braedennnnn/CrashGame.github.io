@@ -4,20 +4,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PeerJS Client</title>
     <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.2"></script>
 </head>
 <body>
-<div style="position:absolute;top:-100%;width:1%;height:1%;left:0%;">&nbsp;</div>
+
 <script>
-    alert("6")
     const peer = new Peer();  // Create a Peer object
 
     peer.on('open', (id) => {
         console.log('Client peer ID is: ' + id);
 
-        const hostPeerId = window.location.search.split("?")[1];  // Replace with the actual host ID
+const urlParams = "cf94b563-3840-48d7-a21a-88d09cdf2674"
+
+        const hostPeerId = urlParams
+        console.log(urlParams)// Replace with the actual host ID
         const connection = peer.connect(hostPeerId);
 
         connection.on('open', () => {
@@ -49,12 +51,12 @@
 
 
 
-<div id="left" class="no-select" style="width:50%;height:100%;left:0%;top:0%;position:absolute;background:orange;border:solid;user-select:none;">
+<div id="left" style="width:50%;height:100%;left:0%;top:0%;position:absolute;background:orange;border:solid;">
 
 
 
 </div>
-<div id="right" class="no-select" style="width:50%;height:100%;left:50%;top:0%;position:absolute;background:orange;border:solid;user-select:none;">
+<div id="right" style="width:50%;height:100%;left:50%;top:0%;position:absolute;background:orange;border:solid;">
 
 
 </div>
@@ -67,28 +69,7 @@
 <style>
     body{
         overflow:hidden;
-        touch-action: manipulation; 
-        user-select:none;
-        -webkit-user-select: text;
-  -moz-user-select: text;
     }
-    .with-select {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  user-select: text;
-}
-
-.no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  touch-action: manipulation; 
-}
-
-.dummy {
-  margin-top: -3000px;
-  position: absolute;
-}
 </style>
 
 </body>
